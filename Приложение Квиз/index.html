@@ -8,11 +8,16 @@
 
 </head>
 <body>
-<div class="quiz-box" id="quiz">
-    <div class="notAnswer"><h6 id = "count_notAnswer" ></h6></div>
     
-    <div class="quiz-header">
-        <h2 id="question">Текст вопроса</h2>
+<div class="quiz-box" id="quiz">
+    
+    <div class="notAnswer"><h6 id = "count_notAnswer" ></h6></div>
+    <!--Вопросы с checkbox -->
+    <div class="quiz-header" id="divCheckbox" style="display: block">
+        <div class="questionStyle">
+        <h2 id="question" >Текст вопроса</h2>
+        <h6 id="variantQuiz">Выберите один или несколько вариантов ответа</h6>
+        </div>
         <ul>
             <li>
                 <input type="checkbox" name="answer" id="a" class="answer">
@@ -28,8 +33,41 @@
             </li>
         </ul>
     </div>
+    <!--Вопросы с radio-->
+    <div class="quiz-header" id="divRadio" style="display: none">
+        <div class="questionStyle">
+        <h2 id="question" >Текст вопроса</h2>
+        <h6 id="variantQuiz" >Выберите один вариант ответа</h6>
+        </div>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="a" class="answer">
+                <label for="a" id="a_text">Вопрос</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="b" class="answer">
+                <label for="b" id="b_text">Вопрос</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="c" class="answer">
+                <label for="c" id="c_text">Вопрос</label>
+            </li>
+        </ul>
+    </div>
+    <!--Вопросы с input type="text"-->
+    <div class="quiz-header" id="divText" style="display: none">
+        <div class="questionStyle">
+        <h2 id="question">Текст вопроса</h2>
+        <h6 id="variantQuiz">Напишите ответ ниже</h6>
+        </div>
+        <input type="text" name="answer" id="text" class="answer">   
+    </div>
+    
     <div class="question"><h6 id = "count_question" ></h6></div>
-    <button id="submit">Ответить</button>
+    
+    <button id="submit">Далее</button>
+    <button id ="back">Назад</button> 
+    
 </div>
     
  
