@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta name="http-equiv" content="Content-type: text/html; charset=UTF-8"/>
+     <meta charset="utf-8" />   
+    <title>Приложение Квиз</title>
+    <link rel="stylesheet" type="text/css"  href="main.css" charset ="utf-8" />
+
+</head>
+<body>
+    
+<div class="quiz-box" id="quiz">
+    
+    <div class="notAnswer"><h6 id = "count_notAnswer" ></h6></div>
+    <!--Вопросы с checkbox -->
+    <div class="quiz-header" id="divCheckbox" style="display: block">
+        <div class="questionStyle">
+        <h2 id="question" >Текст вопроса</h2>
+        <h6 id="variantQuiz">Выберите один или несколько вариантов ответа</h6>
+        </div>
+        <ul>
+            <li>
+                <input type="checkbox" name="answer" id="a" class="answer">
+                <label for="a" id="a_text">Вопрос</label>
+            </li>
+            <li>
+                <input type="checkbox" name="answer" id="b" class="answer">
+                <label for="b" id="b_text">Вопрос</label>
+            </li>
+            <li>
+                <input type="checkbox" name="answer" id="c" class="answer">
+                <label for="c" id="c_text">Вопрос</label>
+            </li>
+        </ul>
+    </div>
+    <!--Вопросы с radio-->
+    <div class="quiz-header" id="divRadio" style="display: none">
+        <div class="questionStyle">
+        <h2 id="questionRadio" >Текст вопроса</h2>
+        <h6 id="variantQuiz" >Выберите один вариант ответа</h6>
+        </div>
+        <ul>
+            <li>
+                <input type="radio" name="answer" id="a" class="answer">
+                <label for="a" id="a_textRadio">Вопрос</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="b" class="answer">
+                <label for="b" id="b_textRadio">Вопрос</label>
+            </li>
+            <li>
+                <input type="radio" name="answer" id="c" class="answer">
+                <label for="c" id="c_textRadio">Вопрос</label>
+            </li>
+        </ul>
+    </div>
+    <!--Вопросы с input type="text"-->
+    <div class="quiz-header" id="divText" style="display: none">
+        <div class="questionStyle">
+        <h2 id="questionText">Текст вопроса</h2>
+        <h6 id="variantQuiz">Напишите ответ ниже</h6>
+        </div>
+        <input type="text" name="answer" id="text" class="answer" value="text">
+    </div>
+    
+    <div class="question"><h6 id = "count_question" ></h6></div>
+    
+    <button id="submit">Далее</button>
+    <button id ="back">Назад</button> 
+    
+</div>
+    
+ 
+ <script src="main.js" charset="utf-8"></script>
+ 
+</body>  
+</html>
