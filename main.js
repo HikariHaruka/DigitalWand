@@ -75,14 +75,17 @@ let text_Answer = `Можно ошибиться ещё ${notAnswer} раза`;
 
 loadQuiz();
 
+function getCurrentVariant()
+{
+    return quizData[currentQuiz].variant;
+}
 //Функция загрузки вопросов и вариантов ответа
 function loadQuiz()
 {
     deselectAnswers();
     
     const currentQuizData = quizData[currentQuiz];
-    const variant = currentQuizData.variant;
-    
+    const variant = getCurrentVariant();
     if(variant == "radio")
     {
         divRadio.style.display = 'block';
@@ -117,6 +120,8 @@ function loadQuiz()
     return variant;
 }
 
+
+
 //Функция отмены выделенных checkbox
 function deselectAnswers()
 {
@@ -127,7 +132,7 @@ function deselectAnswers()
 function getSelected()
 {
     
-    const variant = loadQuiz();
+    const variant = getCurrentVariant();
     if(variant=="radio" || variant=="checkbox")
     {
         let answer=[];
@@ -164,7 +169,7 @@ back.addEventListener('click', () =>
 submit.addEventListener('click', () => 
 {
     const answer = getSelected();
-    const variant = loadQuiz();
+    const variant = getCurrentVariant();
 
     //Проверка правильности ответов
     
@@ -217,7 +222,8 @@ submit.addEventListener('click', () =>
 
             for(i = 0; i < quizData[currentQuiz].correct.length;)
             {
-                if (answer == quizData[currentQuiz].correct[i])
+                let newAnswer = answer.toLowerCase().trim();
+                if (newAnswer == quizData[currentQuiz].correct[i])
                 {
                     score++;
 
